@@ -1,0 +1,70 @@
+[versions]
+androidMinSdk = "21"
+androidCompileSdk = "34"
+
+agp = "8.2.1"
+androidx-activityCompose = "1.8.2"
+androidx-appcompat = "1.6.1"
+androidx-constraintlayout = "2.1.4"
+androidx-core-ktx = "1.12.0"
+androidx-espresso-core = "3.5.1"
+androidx-material = "1.10.0"
+androidx-test-junit = "1.1.5"
+assertk = "0.28.0"
+compose = "1.5.4"
+compose-compiler = "1.5.6"
+compose-plugin = "1.6.0-alpha01"
+detekt = "1.23.4"
+diktat = "1.2.5"
+dokka = "1.9.10"
+gradle-maven-publish-plugin = "0.26.0"
+junit-platform-launcher = "1.10.1"
+junit5 = "5.10.1"
+kermit = "1.2.3"
+kotlin = "1.9.21"
+kotlinx-binary-compatibility-validator = "0.13.2"
+spotless = "6.23.3"
+
+[libraries]
+assertk = { group = "com.willowtreeapps.assertk", name = "assertk", version.ref = "assertk" }
+androidx-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "androidx-activityCompose" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-espresso-core" }
+androidx-test-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-junit" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "compose" }
+androidx-compose-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
+androidx-compose-ui-text = { group = "androidx.compose.ui", name = "ui-text", version.ref = "compose" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
+junit-bom = { group = "org.junit", name = "junit-bom", version.ref = "junit5" }
+junit-jupiter = { group = "org.junit.jupiter", name = "junit-jupiter", version.ref = "junit5" }
+junit-jupiter-api = { group = "org.junit.jupiter", name = "junit-jupiter-api", version.ref = "junit5" }
+junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engine", version.ref = "junit5" }
+junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit5" }
+junit-jupiter-vintage-engine = { group = "org.junit.vintage", name = "junit-vintage-engine", version.ref = "junit5" }
+junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version.ref = "junit-platform-launcher" }
+kermit = { group = "co.touchlab", name = "kermit", version.ref = "kermit" }
+kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin" }
+
+# Dependencies of the included build-logic
+agp-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
+agp-plugin-api = { module = "com.android.tools.build:gradle-api", version.ref = "agp" }
+detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
+detekt-plugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
+diktat-plugin = { group = "org.cqfn.diktat", name = "diktat-gradle-plugin", version.ref = "diktat" }
+dokka-plugin = { group = "org.jetbrains.dokka", name = "dokka-gradle-plugin", version.ref = "dokka" }
+gradle-maven-publish-plugin = { module = "com.vanniktech:gradle-maven-publish-plugin", version.ref = "gradle-maven-publish-plugin" }
+kotlin-plugin = { module = "org.jetbrains.kotlin:kotlin-gradle-plugin", version.ref = "kotlin" }
+kotlinx-binary-compatibility-validator = { module = "org.jetbrains.kotlinx.binary-compatibility-validator:org.jetbrains.kotlinx.binary-compatibility-validator.gradle.plugin", version.ref = "kotlinx-binary-compatibility-validator" }
+spotless-plugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gradle", version.ref = "spotless" }
+
+[plugins]
+android-library = { id = "com.android.library", version.ref = "agp" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+gradle-maven-publish-plugin-base = { id = "com.vanniktech.maven.publish.base", version.ref = "gradle-maven-publish-plugin" }
+jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
+kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
+kotlinx-binary-compatibility-validator = { id = "org.jetbrains.kotlinx.binary-compatibility-validator", version.ref = "kotlinx-binary-compatibility-validator" }
