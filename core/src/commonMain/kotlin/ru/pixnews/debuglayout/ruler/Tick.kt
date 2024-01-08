@@ -138,7 +138,7 @@ private fun calculateInitialPosition(
     val valueAtScreenZero: Float = -zeroPoint / stepPx
 
     val intValue = floor(valueAtScreenZero)
-    val startPoint = (intValue - valueAtScreenZero) * stepPx
+    val startPoint = intValue * stepPx - valueAtScreenZero * stepPx
 
     return InitialPosition(
         offset = startPoint + 0f,
