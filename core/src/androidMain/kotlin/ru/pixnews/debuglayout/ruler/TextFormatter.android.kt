@@ -17,5 +17,5 @@ private class JvmMarkerTextFormatter : MarkerTextFormatter {
     val decimalFormat = DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ROOT)).apply {
         maximumFractionDigits = 1
     }
-    override fun format(value: Float): String = decimalFormat.format(value)
+    override fun format(value: Float): String = decimalFormat.format(value + 0f)
 }

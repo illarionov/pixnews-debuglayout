@@ -12,9 +12,10 @@ import java.util.Locale
 
 internal actual operator fun MarkerTextFormatter.Companion.invoke(): MarkerTextFormatter = JvmMarkerTextFormatter()
 
+// XXX: Keep in sync with Android implementation
 private class JvmMarkerTextFormatter : MarkerTextFormatter {
     val decimalFormat = DecimalFormat("0", DecimalFormatSymbols.getInstance(Locale.ROOT)).apply {
         maximumFractionDigits = 1
     }
-    override fun format(value: Float): String = decimalFormat.format(value)
+    override fun format(value: Float): String = decimalFormat.format(value + 0f)
 }

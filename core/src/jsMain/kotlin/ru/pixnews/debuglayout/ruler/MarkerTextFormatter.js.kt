@@ -10,7 +10,7 @@ internal actual operator fun MarkerTextFormatter.Companion.invoke(): MarkerTextF
 
 private class JsTextFormatter : MarkerTextFormatter {
     val formatter = createIntFormatter()
-    override fun format(value: Float): String = formatter.format(value)
+    override fun format(value: Float): String = formatter.format(value + 0f)
 }
 
 private external interface IntlNumberFormat {
@@ -19,10 +19,9 @@ private external interface IntlNumberFormat {
 
 private fun createIntFormatter(): IntlNumberFormat = js(
     """
-    Intl.NumberFormat('en-US', {
-          maximumFractionDigits: 1,
-          maximumSignificantDigits: 4,
-          trailingZeroDisplay: 'stripIfInteger'
+        Intl.NumberFormat('en-US', {
+            maximumFractionDigits: 1,
+            trailingZeroDisplay: 'stripIfInteger'
         })
-    """,
+        """,
 ).unsafeCast<IntlNumberFormat>()
