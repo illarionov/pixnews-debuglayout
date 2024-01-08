@@ -5,6 +5,9 @@ on:
     workflows: ['build']
     types: [completed]
 
+permissions:
+  contents: write
+
 jobs:
   submit-snapshots:
     runs-on: ubuntu-latest
