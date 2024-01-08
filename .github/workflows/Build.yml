@@ -1,0 +1,171 @@
+name: build
+
+on:
+  pull_request:
+    paths-ignore:
+      - '**/*.md'
+  push:
+    branches:
+      - 'main'
+    paths-ignore:
+      - '**/*.md'
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+env:
+  CI: true
+  TERM: dumb
+  GRADLE_OPTS: >-
+    -Dorg.gradle.jvmargs="-Xmx3G -XX:MaxMetaspaceSize=1g -XX:SoftRefLRUPolicyMSPerMB=10 -XX:+UseParallelGC -XX:NewRatio=1"
+    -Dorg.gradle.workers.max=2
+    -Dorg.gradle.dependency.verification.console=verbose
+  KOTLIN_DAEMON_JVMARGS: >-
+    -Xmx2G -XX:MaxMetaspaceSize=320M -XX:SoftRefLRUPolicyMSPerMB=10 -XX:+UseParallelGC -XX:NewRatio=1
+
+permissions:
+  checks: write
+  pull-requests: write
+
+jobs:
+  assemble:
+    name: Assemble, run tests
+    runs-on: macos-latest
+    timeout-minutes: 60
+    if: ${{ !contains(github.event.head_commit.message, '[ci skip]') }}
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          dependency-graph: generate
+
+      - name: Restore Kotlin Native Cache
+        uses: actions/cache/restore@v3
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle.kts', 'buildSrc') }}
+          restore-keys: ${{ runner.os }}-konan-
+
+      - name: Assemble debug build, run tests
+        run: >
+          ./gradlew --scan -Pkotlin.daemon.jvmargs="${{ env.KOTLIN_DAEMON_JVMARGS }}"
+          build --stacktrace
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: build-outputs
+          path: '**/build/outputs'
+
+      - name: Publish test results
+        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        if: ${{ !cancelled() && (github.actor != 'dependabot[bot]') }}
+        with:
+          comment_mode: off
+          junit_files: '**/build/test-results/**/*.xml'
+          check_name: "Test results"
+
+      - name: Bundle the test reports
+        if: failure()
+        run: >
+          find . \(
+          -name .idea -o -path '*build/intermediates' -o -path '*build/.transforms' -o -path '*build/generated'
+          \) -prune -o
+          -type d -name 'reports' -print0
+          | xargs -0 tar -c --zstd --options zstd:compression-level=20 -f test-reports.tar.zst
+
+      - name: Upload test reports
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: test-reports
+          path: test-reports.tar.zst
+
+      - name: Save Kotlin Native Cache
+        uses: actions/cache/save@v3
+        if: github.ref_name == 'main'
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle.kts', 'buildSrc') }}
+
+  static-analysis:
+    name: Style check
+    runs-on: ubuntu-latest
+    permissions:
+      security-events: write
+    timeout-minutes: 60
+    if: >-
+      !contains(github.event.head_commit.message, '[ci skip]')
+      && github.actor != 'dependabot[bot]'
+
+    steps:
+      - name: Checkout sources
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Validate Gradle wrapper
+        uses: gradle/wrapper-validation-action@v1
+
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '21'
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+        with:
+          dependency-graph: generate
+
+      - name: Restore Kotlin Native Cache
+        uses: actions/cache/restore@v3
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle.kts', 'buildSrc') }}
+          restore-keys: ${{ runner.os }}-konan-
+
+      - name: Run static code analyzers
+        run: >
+          ./gradlew --scan -Pkotlin.daemon.jvmargs="${{ env.KOTLIN_DAEMON_JVMARGS }}"
+          styleCheck --continue
+
+      - name: Uploads .sarif files to GitHub
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ./build/reports/detekt/report.sarif
+          category: detekt
+
+      - name: Bundle the build report
+        if: ${{ !cancelled() }}
+        run: >
+          tar -c -I 'zstd -19 -T0' -f lint-outputs.tar.zst build/reports
+
+      - name: Upload lint outputs
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: lint-outputs
+          path: lint-outputs.tar.zst
+
+      - name: Save Kotlin Native Cache
+        uses: actions/cache/save@v3
+        if: github.ref_name == 'main'
+        with:
+          path: ~/.konan
+          key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle.kts', 'buildSrc') }}
