@@ -73,7 +73,7 @@ mavenPublishing {
     }
 }
 
-tasks.named<DokkaTask>("dokkaHtml") {
+tasks.withType<DokkaTask> {
     notCompatibleWithConfigurationCache("https://github.com/Kotlin/dokka/issues/2231")
     dokkaSourceSets.configureEach {
         skipDeprecated.set(true)
