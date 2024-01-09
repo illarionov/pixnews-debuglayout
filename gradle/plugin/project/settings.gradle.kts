@@ -19,7 +19,6 @@ dependencyResolutionManagement {
     }
 }
 
-include("utils")
 include("multiplatform")
 include("lint")
 
