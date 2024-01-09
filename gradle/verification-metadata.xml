@@ -169,6 +169,11 @@
             <pgp value="7B79ADD11F8A779FE90FD3D0893A028475557671"/>
          </artifact>
       </component>
+      <component group="com.saveourtool.diktat" name="diktat-gradle-plugin" version="2.0.0">
+         <artifact name="diktat-gradle-plugin-2.0.0.jar">
+            <pgp value="B879179229681AD9E8D23A0812DC99973C2318FD"/>
+         </artifact>
+      </component>
       <component group="com.soywiz.korlibs.korte" name="korte-jvm" version="2.7.0">
          <artifact name="korte-jvm-2.7.0.jar">
             <pgp value="1BE2DD4B1FCF252FE4F0A1D103281AA0289FF53A"/>
