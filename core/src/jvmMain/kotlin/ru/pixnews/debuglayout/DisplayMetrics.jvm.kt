@@ -13,6 +13,7 @@ import java.awt.Toolkit
 
 @Composable
 @ReadOnlyComposable
+@Suppress("ModifierComposable")
 internal actual fun Modifier.getDisplayMetrics(): DisplayMetrics {
     val dpi = Toolkit.getDefaultToolkit().screenResolution
     return DisplayMetrics(

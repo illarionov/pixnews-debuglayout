@@ -145,11 +145,17 @@ jobs:
           ./gradlew --scan -Pkotlin.daemon.jvmargs="${{ env.KOTLIN_DAEMON_JVMARGS }}"
           styleCheck --continue
 
-      - name: Uploads .sarif files to GitHub
+      - name: Uploads Detekt .sarif files to GitHub
         uses: github/codeql-action/upload-sarif@v3
         with:
           sarif_file: ./build/reports/detekt/report.sarif
           category: detekt
+
+      - name: Uploads Diktat .sarif files to GitHub
+        uses: github/codeql-action/upload-sarif@v3
+        with:
+          sarif_file: ./build/reports/diktat/diktat.sarif
+          category: diktat
 
       - name: Bundle the build report
         if: ${{ !cancelled() }}

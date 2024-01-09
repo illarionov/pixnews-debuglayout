@@ -50,4 +50,5 @@ val detektCheck = tasks.register("detektCheck", Detekt::class) {
 
 dependencies {
     detektPlugins(versionCatalogs.named("libs").findLibrary("detekt.formatting").get())
+    detektPlugins(versionCatalogs.named("libs").findLibrary("detekt.compose.rules").get())
 }
