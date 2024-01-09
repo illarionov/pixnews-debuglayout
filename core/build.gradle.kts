@@ -17,6 +17,16 @@ version = "0.1-SNAPSHOT"
 
 android {
     namespace = "ru.pixnews.debuglayout"
+    buildTypes {
+        getByName("release") {
+            isMinifyEnabled = true
+            isShrinkResources = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro",
+            )
+        }
+    }
 }
 
 kotlin {
