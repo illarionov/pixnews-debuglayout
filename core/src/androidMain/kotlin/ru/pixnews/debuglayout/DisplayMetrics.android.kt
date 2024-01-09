@@ -13,6 +13,7 @@ import androidx.compose.ui.platform.LocalContext
 
 @Composable
 @ReadOnlyComposable
+@Suppress("ModifierComposable")
 internal actual fun Modifier.getDisplayMetrics(): DisplayMetrics = LocalContext.current.resources.displayMetrics.let {
     DisplayMetrics(it.density, it.xdpi, it.ydpi)
 }

@@ -16,11 +16,11 @@ compose-compiler = "1.5.6"
 compose-plugin = "1.6.0-alpha01"
 detekt = "1.23.4"
 diktat = "1.2.5"
+detekt-compose-rules = "0.3.8"
 dokka = "1.9.10"
 gradle-maven-publish-plugin = "0.27.0"
 junit-platform-launcher = "1.10.1"
 junit5 = "5.10.1"
-kermit = "1.2.3"
 kotlin = "1.9.21"
 kotlinx-binary-compatibility-validator = "0.13.2"
 spotless = "6.23.3"
@@ -45,13 +45,13 @@ junit-jupiter-engine = { group = "org.junit.jupiter", name = "junit-jupiter-engi
 junit-jupiter-params = { group = "org.junit.jupiter", name = "junit-jupiter-params", version.ref = "junit5" }
 junit-jupiter-vintage-engine = { group = "org.junit.vintage", name = "junit-vintage-engine", version.ref = "junit5" }
 junit-platform-launcher = { group = "org.junit.platform", name = "junit-platform-launcher", version.ref = "junit-platform-launcher" }
-kermit = { group = "co.touchlab", name = "kermit", version.ref = "kermit" }
 kotlin-bom = { group = "org.jetbrains.kotlin", name = "kotlin-bom", version.ref = "kotlin" }
 
 # Dependencies of the included build-logic
 agp-plugin = { module = "com.android.tools.build:gradle", version.ref = "agp" }
 agp-plugin-api = { module = "com.android.tools.build:gradle-api", version.ref = "agp" }
 detekt-formatting = { group = "io.gitlab.arturbosch.detekt", name = "detekt-formatting", version.ref = "detekt" }
+detekt-compose-rules = { group = "io.nlopez.compose.rules", name = "detekt", version.ref = "detekt-compose-rules" }
 detekt-plugin = { group = "io.gitlab.arturbosch.detekt", name = "detekt-gradle-plugin", version.ref = "detekt" }
 diktat-plugin = { group = "org.cqfn.diktat", name = "diktat-gradle-plugin", version.ref = "diktat" }
 dokka-plugin = { group = "org.jetbrains.dokka", name = "dokka-gradle-plugin", version.ref = "dokka" }
