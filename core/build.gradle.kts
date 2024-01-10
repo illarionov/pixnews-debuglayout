@@ -13,7 +13,7 @@ plugins {
 }
 
 group = "ru.pixnews.debuglayout"
-version = "0.1"
+version = "0.2-SNAPSHOT"
 
 android {
     namespace = "ru.pixnews.debuglayout"
