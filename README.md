@@ -28,7 +28,7 @@ Add the dependency:
 
 ```kotlin
 dependencies {
-    implementation("ru.pixnews.debuglayout:core:0.1-SNAPSHOT")
+    implementation("ru.pixnews.debuglayout:core:0.1")
 }
 ```
 
