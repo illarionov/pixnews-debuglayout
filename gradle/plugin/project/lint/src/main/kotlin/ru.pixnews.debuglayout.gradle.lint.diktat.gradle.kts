@@ -4,7 +4,6 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
-import com.saveourtool.diktat.plugin.gradle.tasks.DiktatTaskBase
 import ru.pixnews.debuglayout.gradle.lint.configRootDir
 import ru.pixnews.debuglayout.gradle.lint.excludeNonLintedDirectories
 
@@ -27,8 +26,13 @@ diktat {
         sarif()
     }
     debug = false
+    githubActions = false
 }
 
-tasks.withType<DiktatTaskBase>().configureEach {
+tasks.named("mergeDiktatReports").configure {
+    enabled = false
+}
+
+tasks.matching { it.name.startsWith("diktat") }.configureEach {
     notCompatibleWithConfigurationCache("invocation of 'Task.project' at execution time is unsupported")
 }
