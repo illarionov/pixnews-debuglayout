@@ -2,6 +2,6 @@
 
 ## Version 0.1 (not yet released)
 
-_2023-01-07_
+*2023-01-07*
 
- * Initial release. API is subject to change.
+- Initial release. API is subject to change.
