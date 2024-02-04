@@ -2,7 +2,7 @@
 androidMinSdk = "21"
 androidCompileSdk = "34"
 
-agp = "8.2.1"
+agp = "8.2.2"
 androidx-activityCompose = "1.8.2"
 androidx-appcompat = "1.6.1"
 androidx-constraintlayout = "2.1.4"
