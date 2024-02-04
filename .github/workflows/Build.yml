@@ -20,7 +20,6 @@ env:
   TERM: dumb
   GRADLE_OPTS: >-
     -Dorg.gradle.jvmargs="-Xmx3G -XX:MaxMetaspaceSize=1g -XX:SoftRefLRUPolicyMSPerMB=10 -XX:+UseParallelGC -XX:NewRatio=1"
-    -Dorg.gradle.workers.max=2
     -Dorg.gradle.dependency.verification.console=verbose
   KOTLIN_DAEMON_JVMARGS: >-
     -Xmx2G -XX:MaxMetaspaceSize=320M -XX:SoftRefLRUPolicyMSPerMB=10 -XX:+UseParallelGC -XX:NewRatio=1
@@ -50,12 +49,13 @@ jobs:
           java-version: '21'
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/actions/setup-gradle@v3
         with:
+          cache-encryption-key: ${{ secrets.GradleEncryptionKey }}
           dependency-graph: generate
 
       - name: Restore Kotlin Native Cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: ~/.konan
           key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle.kts', 'buildSrc') }}
@@ -104,7 +104,7 @@ jobs:
           category: android-lint
 
       - name: Save Kotlin Native Cache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         if: github.ref_name == 'main'
         with:
           path: ~/.konan
@@ -126,9 +126,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: Validate Gradle wrapper
-        uses: gradle/wrapper-validation-action@v1
-
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
@@ -136,12 +133,13 @@ jobs:
           java-version: '21'
 
       - name: Setup Gradle
-        uses: gradle/gradle-build-action@v2
+        uses: gradle/actions/setup-gradle@v3
         with:
+          cache-encryption-key: ${{ secrets.GradleEncryptionKey }}
           dependency-graph: generate
 
       - name: Restore Kotlin Native Cache
-        uses: actions/cache/restore@v3
+        uses: actions/cache/restore@v4
         with:
           path: ~/.konan
           key: ${{ runner.os }}-konan-${{ hashFiles('**/*.gradle.kts', 'buildSrc') }}
@@ -177,7 +175,7 @@ jobs:
           path: lint-outputs.tar.zst
 
       - name: Save Kotlin Native Cache
-        uses: actions/cache/save@v3
+        uses: actions/cache/save@v4
         if: github.ref_name == 'main'
         with:
           path: ~/.konan
