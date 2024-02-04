@@ -14,7 +14,7 @@ assertk = "0.28.0"
 compose = "1.5.4"
 compose-compiler = "1.5.8"
 compose-plugin = "1.6.0-beta01"
-detekt = "1.23.4"
+detekt = "1.23.5"
 diktat = "2.0.0"
 detekt-compose-rules = "0.3.8"
 dokka = "1.9.10"
@@ -23,7 +23,7 @@ junit-platform-launcher = "1.10.1"
 junit5 = "5.10.1"
 kotlin = "1.9.22"
 kotlinx-binary-compatibility-validator = "0.13.2"
-spotless = "6.23.3"
+spotless = "6.25.0"
 
 [libraries]
 assertk = { group = "com.willowtreeapps.assertk", name = "assertk", version.ref = "assertk" }
