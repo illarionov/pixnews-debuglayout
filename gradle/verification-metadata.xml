@@ -58,6 +58,8 @@
          <trusted-key id="8461EFA0E74ABAE010DE66994EB27DB2A3B88B8B">
             <trusting group="androidx.activity"/>
             <trusting group="androidx.annotation"/>
+            <trusting group="androidx.collection"/>
+            <trusting group="androidx.core"/>
             <trusting group="^androidx[.]compose($|([.].*))" regex="true"/>
          </trusted-key>
          <trusted-key id="8569C95CADC508B09FE90F3002216ED811210DAA" group="io.github.detekt.sarif4k"/>
@@ -241,6 +243,11 @@
             <pgp value="1D2C7EF8ADA0F794B58C7C63436902AF59EDF60E"/>
          </artifact>
       </component>
+      <component group="dev.equo.ide" name="solstice" version="1.7.5">
+         <artifact name="solstice-1.7.5.jar">
+            <pgp value="1D2C7EF8ADA0F794B58C7C63436902AF59EDF60E"/>
+         </artifact>
+      </component>
       <component group="info.picocli" name="picocli" version="4.6.3">
          <artifact name="picocli-4.6.3.jar">
             <pgp value="AA417737BD805456DB3CBDDE6601E5C08DCCBB96"/>
@@ -254,6 +261,11 @@
       <component group="io.github.detekt.sarif4k" name="sarif4k-jvm" version="0.3.0">
          <artifact name="sarif4k-jvm-0.3.0.jar">
             <pgp value="8569C95CADC508B09FE90F3002216ED811210DAA"/>
+         </artifact>
+      </component>
+      <component group="io.github.java-diff-utils" name="java-diff-utils" version="4.12">
+         <artifact name="java-diff-utils-4.12.jar">
+            <pgp value="D477D51812E692011DB11E66A6EA2E2BF22E0543"/>
          </artifact>
       </component>
       <component group="io.github.microutils" name="kotlin-logging-jvm" version="2.1.23">
