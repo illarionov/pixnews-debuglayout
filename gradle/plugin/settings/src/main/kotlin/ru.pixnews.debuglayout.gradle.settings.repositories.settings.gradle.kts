@@ -34,7 +34,6 @@ pluginManagement {
 
 dependencyResolutionManagement {
     repositories {
-        google()
         mavenCentral()
         jetbrainsCompose()
         googleFiltered()
