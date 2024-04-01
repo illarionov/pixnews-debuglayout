@@ -74,7 +74,7 @@ jobs:
           path: '**/build/outputs'
 
       - name: Publish test results
-        uses: EnricoMi/publish-unit-test-result-action/composite@v2
+        uses: EnricoMi/publish-unit-test-result-action/macos@v2
         if: ${{ !cancelled() && (github.actor != 'dependabot[bot]') }}
         with:
           comment_mode: off
