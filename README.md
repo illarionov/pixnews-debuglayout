@@ -346,7 +346,7 @@ fun EmptySearchResultColumnPreview() {
 
 ![Horizontal ruler](doc/img/sample-horizontal-ruler-1.png)
 
-You can also check out this set of predefined layouts as example: [Material3DebugLayouts.kt](core%2Fsrc%2FcommonMain%2Fkotlin%2Fru%2Fpixnews%2Fdebuglayout%2FMaterial3DebugLayouts.kt)
+You can also check out this set of predefined layouts as example: [Material3DebugLayouts.kt](core%2fsrc%2fcommonMain%2fkotlin%2fMaterial3DebugLayouts.kt)
 
 ## Contributing
 
