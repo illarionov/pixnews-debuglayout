@@ -4,9 +4,9 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
+package ru.pixnews.debuglayout.gradle.lint
+
 import io.gitlab.arturbosch.detekt.Detekt
-import ru.pixnews.debuglayout.gradle.lint.configRootDir
-import ru.pixnews.debuglayout.gradle.lint.lintedFileTree
 
 /*
  * Convention plugin that creates and configures task designated to run Detekt static code analyzer

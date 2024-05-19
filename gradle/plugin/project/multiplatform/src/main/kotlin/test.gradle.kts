@@ -4,6 +4,8 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
+package ru.pixnews.debuglayout.gradle.multiplatform
+
 import org.gradle.api.tasks.testing.Test
 import org.gradle.api.tasks.testing.logging.TestLogEvent.FAILED
 import org.gradle.kotlin.dsl.withType

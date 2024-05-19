@@ -4,16 +4,12 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
+package ru.pixnews.debuglayout.gradle.settings
+
 /*
- * Settings convention plugin with the Gradle Enterprise configuration
+ * Base settings convention plugin for the use in library modules
  */
 plugins {
-    id("com.gradle.enterprise")
-}
-
-gradleEnterprise {
-    buildScan {
-        termsOfServiceUrl = "https://gradle.com/terms-of-service"
-        termsOfServiceAgree = "yes"
-    }
+    id("ru.pixnews.debuglayout.gradle.settings.repositories")
+    id("ru.pixnews.debuglayout.gradle.settings.gradle-enterprise")
 }

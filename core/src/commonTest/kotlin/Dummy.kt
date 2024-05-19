@@ -4,10 +4,7 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
-/*
- * Base settings convention plugin for the use in library modules
- */
-plugins {
-    id("ru.pixnews.debuglayout.gradle.settings.repositories")
-    id("ru.pixnews.debuglayout.gradle.settings.gradle-enterprise")
-}
+@file:Suppress("FILE_CONTAINS_ONLY_COMMENTS", "FILE_NO_BLANK_LINE_BETWEEN_BLOCKS")
+
+// Workaround for https://youtrack.jetbrains.com/issue/KTIJ-27842
+package ru.pixnews.debuglayout
