@@ -4,8 +4,7 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
-import ru.pixnews.debuglayout.gradle.lint.configRootDir
-import ru.pixnews.debuglayout.gradle.lint.excludeNonLintedDirectories
+package ru.pixnews.debuglayout.gradle.lint
 
 /*
  * Convention plugin that configures Diktat

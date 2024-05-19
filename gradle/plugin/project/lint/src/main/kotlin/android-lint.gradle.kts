@@ -4,12 +4,13 @@
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
 
+package ru.pixnews.debuglayout.gradle.lint
+
 import com.android.build.api.dsl.CommonExtension
 import com.android.build.gradle.AppPlugin
 import com.android.build.gradle.DynamicFeaturePlugin
 import com.android.build.gradle.LibraryPlugin
 import com.android.build.gradle.TestPlugin
-import ru.pixnews.debuglayout.gradle.lint.configureCommonAndroidLint
 
 /*
  * Convention plugin that configures Android Lint in projects with the Android Gradle plugin
