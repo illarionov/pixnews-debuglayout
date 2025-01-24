@@ -20,5 +20,4 @@ internal data class DisplayMetrics(val density: Float, val xdpi: Float, val ydpi
 }
 
 @Composable
-@Suppress("ModifierComposable")
 internal expect fun Modifier.getDisplayMetrics(): DisplayMetrics
