@@ -1,23 +1,24 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 @file:Suppress("FLOAT_IN_ACCURATE_CALCULATIONS", "WRONG_MULTIPLE_MODIFIERS_ORDER")
 
-package ru.pixnews.debuglayout.rowcolumn
+package at.released.debuglayout.rowcolumn
 
 import androidx.compose.ui.unit.Density
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ru.pixnews.debuglayout.rowcolumn.ArrangementCalculator.PaintedSubrange
-import ru.pixnews.debuglayout.rowcolumn.DebugColumnsArrangement.Center
-import ru.pixnews.debuglayout.rowcolumn.DebugColumnsArrangement.Left
-import ru.pixnews.debuglayout.rowcolumn.DebugColumnsArrangement.Right
-import ru.pixnews.debuglayout.rowcolumn.DebugColumnsArrangement.Stretch
-import ru.pixnews.debuglayout.rowcolumn.DebugRowsArrangement.Bottom
-import ru.pixnews.debuglayout.rowcolumn.DebugRowsArrangement.Top
+import at.released.debuglayout.rowcolumn.ArrangementCalculator.PaintedSubrange
+import at.released.debuglayout.rowcolumn.DebugColumnsArrangement.Center
+import at.released.debuglayout.rowcolumn.DebugColumnsArrangement.Left
+import at.released.debuglayout.rowcolumn.DebugColumnsArrangement.Right
+import at.released.debuglayout.rowcolumn.DebugColumnsArrangement.Stretch
+import at.released.debuglayout.rowcolumn.DebugRowsArrangement.Bottom
+import at.released.debuglayout.rowcolumn.DebugRowsArrangement.Top
 
 internal fun interface ArrangementCalculator {
     fun Density.arrange(totalSize: Float): Sequence<PaintedSubrange>

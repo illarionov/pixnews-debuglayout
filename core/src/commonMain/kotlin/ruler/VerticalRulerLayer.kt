@@ -1,12 +1,13 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 @file:Suppress("FLOAT_IN_ACCURATE_CALCULATIONS")
 
-package ru.pixnews.debuglayout.ruler
+package at.released.debuglayout.ruler
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.geometry.Size
@@ -24,14 +25,14 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.Constraints
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ru.pixnews.debuglayout.DebugLayer
-import ru.pixnews.debuglayout.DebugLayoutDefaults.Ruler
-import ru.pixnews.debuglayout.DisplayMetrics
-import ru.pixnews.debuglayout.ruler.RulerOrientation.VERTICAL
-import ru.pixnews.debuglayout.ruler.Tick.TickType
-import ru.pixnews.debuglayout.ruler.Tick.TickType.MAJOR
-import ru.pixnews.debuglayout.ruler.Tick.TickType.MINOR
-import ru.pixnews.debuglayout.ruler.ZeroOffset.Companion.toCommonZeroOffset
+import at.released.debuglayout.DebugLayer
+import at.released.debuglayout.DebugLayoutDefaults.Ruler
+import at.released.debuglayout.DisplayMetrics
+import at.released.debuglayout.ruler.RulerOrientation.VERTICAL
+import at.released.debuglayout.ruler.Tick.TickType
+import at.released.debuglayout.ruler.Tick.TickType.MAJOR
+import at.released.debuglayout.ruler.Tick.TickType.MINOR
+import at.released.debuglayout.ruler.ZeroOffset.Companion.toCommonZeroOffset
 import kotlin.math.ceil
 import kotlin.math.roundToInt
 

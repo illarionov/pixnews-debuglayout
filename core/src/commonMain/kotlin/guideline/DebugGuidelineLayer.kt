@@ -1,25 +1,26 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 @file:Suppress("FLOAT_IN_ACCURATE_CALCULATIONS")
 
-package ru.pixnews.debuglayout.guideline
+package at.released.debuglayout.guideline
 
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
 import androidx.compose.ui.unit.Dp
-import ru.pixnews.debuglayout.DebugLayer
-import ru.pixnews.debuglayout.guideline.DebugGuidelineOffset.Percent
-import ru.pixnews.debuglayout.guideline.DebugGuidelinePosition.Bottom
-import ru.pixnews.debuglayout.guideline.DebugGuidelinePosition.CenterHorizontal
-import ru.pixnews.debuglayout.guideline.DebugGuidelinePosition.CenterVertical
-import ru.pixnews.debuglayout.guideline.DebugGuidelinePosition.End
-import ru.pixnews.debuglayout.guideline.DebugGuidelinePosition.Start
-import ru.pixnews.debuglayout.guideline.DebugGuidelinePosition.Top
+import at.released.debuglayout.DebugLayer
+import at.released.debuglayout.guideline.DebugGuidelineOffset.Percent
+import at.released.debuglayout.guideline.DebugGuidelinePosition.Bottom
+import at.released.debuglayout.guideline.DebugGuidelinePosition.CenterHorizontal
+import at.released.debuglayout.guideline.DebugGuidelinePosition.CenterVertical
+import at.released.debuglayout.guideline.DebugGuidelinePosition.End
+import at.released.debuglayout.guideline.DebugGuidelinePosition.Start
+import at.released.debuglayout.guideline.DebugGuidelinePosition.Top
 
 internal class DebugGuidelineLayer(
     private val guideline: DebugGuidelinePosition,

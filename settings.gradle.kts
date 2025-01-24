@@ -3,8 +3,8 @@ pluginManagement {
 }
 
 plugins {
-    id("ru.pixnews.debuglayout.gradle.settings.root")
+    id("at.released.debuglayout.gradle.settings.root")
 }
 
-rootProject.name = "pixnews-debuglayout"
+rootProject.name = "compose-debuglayout"
 include("core")

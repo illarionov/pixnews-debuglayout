@@ -1,12 +1,13 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 @file:Suppress("MagicNumber", "TooManyFunctions")
 
-package ru.pixnews.debuglayout
+package at.released.debuglayout
 
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
@@ -18,21 +19,20 @@ import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ru.pixnews.debuglayout.guideline.DebugGuidelineLayer
-import ru.pixnews.debuglayout.guideline.DebugGuidelineOffset
-import ru.pixnews.debuglayout.guideline.DebugGuidelinePosition
-import ru.pixnews.debuglayout.rowcolumn.ColumnsLayer
-import ru.pixnews.debuglayout.rowcolumn.DebugColumnsArrangement
-import ru.pixnews.debuglayout.rowcolumn.DebugRowsArrangement
-import ru.pixnews.debuglayout.rowcolumn.RowsColumnsCount
-import ru.pixnews.debuglayout.rowcolumn.RowsLayer
-import ru.pixnews.debuglayout.rowcolumn.asRowColumnCount
-import ru.pixnews.debuglayout.ruler.DebugRulerHorizontalZeroPoint
-import ru.pixnews.debuglayout.ruler.DebugRulerMeasureUnit
-import ru.pixnews.debuglayout.ruler.DebugRulerVerticalZeroPoint
-import ru.pixnews.debuglayout.ruler.HorizontalRulerLayer
-import ru.pixnews.debuglayout.ruler.VerticalRulerLayer
-import kotlin.text.set
+import at.released.debuglayout.guideline.DebugGuidelineLayer
+import at.released.debuglayout.guideline.DebugGuidelineOffset
+import at.released.debuglayout.guideline.DebugGuidelinePosition
+import at.released.debuglayout.rowcolumn.ColumnsLayer
+import at.released.debuglayout.rowcolumn.DebugColumnsArrangement
+import at.released.debuglayout.rowcolumn.DebugRowsArrangement
+import at.released.debuglayout.rowcolumn.RowsColumnsCount
+import at.released.debuglayout.rowcolumn.RowsLayer
+import at.released.debuglayout.rowcolumn.asRowColumnCount
+import at.released.debuglayout.ruler.DebugRulerHorizontalZeroPoint
+import at.released.debuglayout.ruler.DebugRulerMeasureUnit
+import at.released.debuglayout.ruler.DebugRulerVerticalZeroPoint
+import at.released.debuglayout.ruler.HorizontalRulerLayer
+import at.released.debuglayout.ruler.VerticalRulerLayer
 
 public class DebugLayout private constructor(
     private val textMeasurer: TextMeasurer,

@@ -1,23 +1,24 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 @file:Suppress("FLOAT_IN_ACCURATE_CALCULATIONS")
 
-package ru.pixnews.debuglayout.ruler
+package at.released.debuglayout.ruler
 
-import ru.pixnews.debuglayout.DisplayMetrics
-import ru.pixnews.debuglayout.ruler.Tick.TickType
-import ru.pixnews.debuglayout.ruler.Tick.TickType.MAJOR
-import ru.pixnews.debuglayout.ruler.Tick.TickType.MINOR
-import ru.pixnews.debuglayout.ruler.ZeroOffset.Alignment.CENTER
-import ru.pixnews.debuglayout.ruler.ZeroOffset.Alignment.LEFT_TOP
-import ru.pixnews.debuglayout.ruler.ZeroOffset.Alignment.RIGHT_BOTTOM
+import at.released.debuglayout.DisplayMetrics
+import at.released.debuglayout.ruler.Tick.TickType
+import at.released.debuglayout.ruler.Tick.TickType.MAJOR
+import at.released.debuglayout.ruler.Tick.TickType.MINOR
+import at.released.debuglayout.ruler.ZeroOffset.Alignment.CENTER
+import at.released.debuglayout.ruler.ZeroOffset.Alignment.LEFT_TOP
+import at.released.debuglayout.ruler.ZeroOffset.Alignment.RIGHT_BOTTOM
 import kotlin.math.floor
-import ru.pixnews.debuglayout.ruler.DebugRulerHorizontalZeroPoint.Alignment as HorizontalAlignment
-import ru.pixnews.debuglayout.ruler.DebugRulerVerticalZeroPoint.Alignment as VerticalAlignment
+import at.released.debuglayout.ruler.DebugRulerHorizontalZeroPoint.Alignment as HorizontalAlignment
+import at.released.debuglayout.ruler.DebugRulerVerticalZeroPoint.Alignment as VerticalAlignment
 
 internal data class Tick(
     val position: Float,
