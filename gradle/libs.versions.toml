@@ -12,7 +12,6 @@ androidx-material = "1.10.0"
 androidx-test-junit = "1.2.1"
 assertk = "0.28.1"
 compose = "1.7.6"
-compose-compiler = "1.5.15"
 compose-plugin = "1.7.0"
 detekt = "1.23.7"
 diktat = "2.0.0"
@@ -21,7 +20,7 @@ dokka = "2.0.0"
 gradle-maven-publish-plugin = "0.30.0"
 junit-platform-launcher = "1.11.4"
 junit5 = "5.11.4"
-kotlin = "1.9.24"
+kotlin = "2.1.0"
 kotlinx-binary-compatibility-validator = "0.17.0"
 spotless = "7.0.0"
 
@@ -62,6 +61,7 @@ spotless-plugin = { group = "com.diffplug.spotless", name = "spotless-plugin-gra
 
 [plugins]
 android-library = { id = "com.android.library", version.ref = "agp" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 gradle-maven-publish-plugin-base = { id = "com.vanniktech.maven.publish.base", version.ref = "gradle-maven-publish-plugin" }
 jetbrains-compose = { id = "org.jetbrains.compose", version.ref = "compose-plugin" }
