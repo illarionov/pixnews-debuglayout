@@ -54,7 +54,7 @@ kotlin {
             implementation(libs.androidx.compose.ui.text)
         }
         commonMain.dependencies {
-            api(compose.foundation)
+            api(compose.runtime)
             api(compose.ui)
         }
         /* Test source sets */
