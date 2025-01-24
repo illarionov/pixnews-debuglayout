@@ -8,13 +8,12 @@
 
 package ru.pixnews.debuglayout
 
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Stable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.composed
 import androidx.compose.ui.draw.DrawModifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
-import androidx.compose.ui.platform.debugInspectorInfo
 import androidx.compose.ui.text.TextMeasurer
 import androidx.compose.ui.text.rememberTextMeasurer
 import androidx.compose.ui.unit.Dp
@@ -33,6 +32,7 @@ import ru.pixnews.debuglayout.ruler.DebugRulerMeasureUnit
 import ru.pixnews.debuglayout.ruler.DebugRulerVerticalZeroPoint
 import ru.pixnews.debuglayout.ruler.HorizontalRulerLayer
 import ru.pixnews.debuglayout.ruler.VerticalRulerLayer
+import kotlin.text.set
 
 public class DebugLayout private constructor(
     private val textMeasurer: TextMeasurer,
@@ -92,19 +92,13 @@ public class DebugLayout private constructor(
     public companion object {
         @Stable
         @Suppress("MemberNameEqualsClassName")
+        @Composable
         public fun Modifier.debugLayout(
-            testMeasurer: TextMeasurer? = null,
+            testMeasurer: TextMeasurer = rememberTextMeasurer(),
             buildAction: DebugLayout.() -> Unit,
-        ): Modifier = this.composed(
-            inspectorInfo = debugInspectorInfo {
-                name = "debugLayout"
-                properties["buildAction"] = buildAction
-            },
-        ) {
-            val textMeasurer = testMeasurer ?: rememberTextMeasurer()
+        ): Modifier {
             val displayMetrics = getDisplayMetrics()
-
-            this.then(DebugLayout(textMeasurer, displayMetrics).apply(buildAction).build())
+            return this then DebugLayout(testMeasurer, displayMetrics).apply(buildAction).build()
         }
 
         @Stable
