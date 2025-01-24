@@ -17,7 +17,7 @@ pluginManagement {
         maven {
             url = uri("https://maven.pixnews.ru")
             mavenContent {
-                includeGroup("ru.pixnews.debuglayout")
+                includeGroup("at.released.debuglayout")
             }
         }
     }
@@ -28,7 +28,7 @@ Add the dependency:
 
 ```kotlin
 dependencies {
-    implementation("ru.pixnews.debuglayout:core:0.1")
+    implementation("at.released.debuglayout:core:0.1")
 }
 ```
 
@@ -358,7 +358,7 @@ These services are licensed under Apache 2.0 License. Authors and contributors a
 [Authors](AUTHORS) file.
 
 ```
-Copyright 2024 pixnews-debuglayout project authors and contributors.
+Copyright 2024 compose-debuglayout project authors and contributors.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

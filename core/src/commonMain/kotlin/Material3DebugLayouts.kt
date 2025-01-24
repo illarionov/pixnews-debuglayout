@@ -1,18 +1,19 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
-package ru.pixnews.debuglayout
+package at.released.debuglayout
 
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
-import ru.pixnews.debuglayout.LargeLayoutRegions.EXPANDED
-import ru.pixnews.debuglayout.LargeLayoutRegions.OFF
-import ru.pixnews.debuglayout.LargeLayoutRegions.ON
-import ru.pixnews.debuglayout.rowcolumn.RowsColumnsCount
-import ru.pixnews.debuglayout.rowcolumn.asRowColumnCount
+import at.released.debuglayout.LargeLayoutRegions.EXPANDED
+import at.released.debuglayout.LargeLayoutRegions.OFF
+import at.released.debuglayout.LargeLayoutRegions.ON
+import at.released.debuglayout.rowcolumn.RowsColumnsCount
+import at.released.debuglayout.rowcolumn.asRowColumnCount
 
 /**
  * 4dp baseline grid to help align text

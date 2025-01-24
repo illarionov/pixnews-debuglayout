@@ -1,22 +1,23 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
-package ru.pixnews.debuglayout.ruler
+package at.released.debuglayout.ruler
 
 import assertk.assertThat
 import assertk.assertions.containsExactlyInAnyOrder
 import assertk.tableOf
-import ru.pixnews.debuglayout.DisplayMetrics
-import ru.pixnews.debuglayout.ruler.RulerOrientation.HORIZONTAL
-import ru.pixnews.debuglayout.ruler.RulerOrientation.VERTICAL
-import ru.pixnews.debuglayout.ruler.Tick.TickType.MAJOR
-import ru.pixnews.debuglayout.ruler.Tick.TickType.MINOR
-import ru.pixnews.debuglayout.ruler.ZeroOffset.Alignment.CENTER
-import ru.pixnews.debuglayout.ruler.ZeroOffset.Alignment.LEFT_TOP
-import ru.pixnews.debuglayout.ruler.ZeroOffset.Alignment.RIGHT_BOTTOM
+import at.released.debuglayout.DisplayMetrics
+import at.released.debuglayout.ruler.RulerOrientation.HORIZONTAL
+import at.released.debuglayout.ruler.RulerOrientation.VERTICAL
+import at.released.debuglayout.ruler.Tick.TickType.MAJOR
+import at.released.debuglayout.ruler.Tick.TickType.MINOR
+import at.released.debuglayout.ruler.ZeroOffset.Alignment.CENTER
+import at.released.debuglayout.ruler.ZeroOffset.Alignment.LEFT_TOP
+import at.released.debuglayout.ruler.ZeroOffset.Alignment.RIGHT_BOTTOM
 import kotlin.math.floor
 import kotlin.test.Test
 

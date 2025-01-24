@@ -1,7 +1,8 @@
 /*
- * Copyright (c) 2025, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
 plugins {
@@ -13,9 +14,9 @@ plugins {
     alias(libs.plugins.kotlin.jvm) apply false
     alias(libs.plugins.kotlin.multiplatform) apply false
     alias(libs.plugins.kotlinx.binary.compatibility.validator) apply false
-    id("ru.pixnews.debuglayout.gradle.lint.detekt")
-    id("ru.pixnews.debuglayout.gradle.lint.diktat")
-    id("ru.pixnews.debuglayout.gradle.lint.spotless")
+    id("at.released.debuglayout.gradle.lint.detekt")
+    id("at.released.debuglayout.gradle.lint.diktat")
+    id("at.released.debuglayout.gradle.lint.spotless")
 }
 
 tasks.register("styleCheck") {

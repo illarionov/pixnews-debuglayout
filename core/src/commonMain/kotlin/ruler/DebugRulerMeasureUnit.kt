@@ -1,16 +1,17 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, Alexey Illarionov and the compose-debuglayout project contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ * SPDX-License-Identifier: Apache-2.0
  */
 
-package ru.pixnews.debuglayout.ruler
+package at.released.debuglayout.ruler
 
-import ru.pixnews.debuglayout.DisplayMetrics
-import ru.pixnews.debuglayout.ruler.DebugRulerMeasureUnit.Unit.DP
-import ru.pixnews.debuglayout.ruler.DebugRulerMeasureUnit.Unit.INCHES
-import ru.pixnews.debuglayout.ruler.DebugRulerMeasureUnit.Unit.MM
-import ru.pixnews.debuglayout.ruler.DebugRulerMeasureUnit.Unit.PX
+import at.released.debuglayout.DisplayMetrics
+import at.released.debuglayout.ruler.DebugRulerMeasureUnit.Unit.DP
+import at.released.debuglayout.ruler.DebugRulerMeasureUnit.Unit.INCHES
+import at.released.debuglayout.ruler.DebugRulerMeasureUnit.Unit.MM
+import at.released.debuglayout.ruler.DebugRulerMeasureUnit.Unit.PX
 
 public data class DebugRulerMeasureUnit(
     val value: Int,

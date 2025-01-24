@@ -1,7 +1,7 @@
 # https://github.com/saveourtool/diktat/blob/master/diktat-rules/src/main/resources/diktat-analysis.yml
 - name: DIKTAT_COMMON
   configuration:
-    domainName: ru.pixnews.debuglayout
+    domainName: at.released.debuglayout
     testDirs: test
     disabledChapters: ""
     kotlinVersion: 1.9
@@ -67,7 +67,7 @@
   enabled: false
   configuration:
     isCopyrightMandatory: true
-    copyrightText: 'Copyright (c) ;@currYear;, the pixnews-debuglayout project authors and contributors.'
+    copyrightText: 'Copyright (c) ;@currYear;, Alexey Illarionov and the compose-debuglayout project contributors.'
 
 - name: HEADER_WRONG_FORMAT
   enabled: false
