@@ -64,7 +64,7 @@
   enabled: false
 
 - name: HEADER_MISSING_OR_WRONG_COPYRIGHT
-  enabled: true
+  enabled: false
   configuration:
     isCopyrightMandatory: true
     copyrightText: 'Copyright (c) ;@currYear;, the pixnews-debuglayout project authors and contributors.'

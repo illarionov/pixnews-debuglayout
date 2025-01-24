@@ -8,7 +8,6 @@ package ru.pixnews.debuglayout.gradle.multiplatform
 
 import com.vanniktech.maven.publish.JavadocJar
 import com.vanniktech.maven.publish.KotlinMultiplatform
-import org.jetbrains.dokka.gradle.DokkaTask
 
 /*
  * Convention plugin with publishing defaults
@@ -45,7 +44,7 @@ mavenPublishing {
     signAllPublications()
 
     configure(
-        KotlinMultiplatform(javadocJar = JavadocJar.Dokka("dokkaHtml")),
+        KotlinMultiplatform(javadocJar = JavadocJar.Empty()),
     )
 
     pom {
@@ -72,12 +71,5 @@ mavenPublishing {
             developerConnection.set("scm:git:ssh://github.com:illarionov/pixnews-debuglayout.git")
             url.set("https://github.com/illarionov/pixnews-debuglayout")
         }
-    }
-}
-
-tasks.withType<DokkaTask> {
-    notCompatibleWithConfigurationCache("https://github.com/Kotlin/dokka/issues/2231")
-    dokkaSourceSets.configureEach {
-        skipDeprecated.set(true)
     }
 }
