@@ -1,6 +1,13 @@
+/*
+ * Copyright (c) 2025, the pixnews-debuglayout project authors and contributors.
+ * Please see the AUTHORS file for details.
+ * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
+ */
+
 plugins {
     alias(libs.plugins.android.library) apply false
-    alias(libs.plugins.dokka)
+    alias(libs.plugins.compose.compiler) apply false
+    alias(libs.plugins.dokka) apply false
     alias(libs.plugins.gradle.maven.publish.plugin.base) apply false
     alias(libs.plugins.jetbrains.compose) apply false
     alias(libs.plugins.kotlin.jvm) apply false

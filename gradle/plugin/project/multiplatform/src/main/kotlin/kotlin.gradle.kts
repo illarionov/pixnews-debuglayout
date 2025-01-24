@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024, the pixnews-debuglayout project authors and contributors.
+ * Copyright (c) 2024-2025, the pixnews-debuglayout project authors and contributors.
  * Please see the AUTHORS file for details.
  * Use of this source code is governed by the Apache 2.0 license that can be found in the LICENSE file.
  */
@@ -14,7 +14,7 @@ import org.jetbrains.kotlin.gradle.tasks.KotlinJvmCompile
  * Convention plugin that configures Kotlin in projects with the Kotlin Multiplatform plugin
  */
 plugins {
-    id("org.jetbrains.kotlin.multiplatform") apply false
+    id("org.jetbrains.kotlin.multiplatform")
 }
 
 kotlin {
