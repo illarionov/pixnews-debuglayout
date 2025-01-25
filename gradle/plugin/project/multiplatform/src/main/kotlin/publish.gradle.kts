@@ -9,6 +9,7 @@ package at.released.debuglayout.gradle.multiplatform
 
 import com.vanniktech.maven.publish.JavadocJar
 import com.vanniktech.maven.publish.KotlinMultiplatform
+import com.vanniktech.maven.publish.SonatypeHost
 
 /*
  * Convention plugin with publishing defaults
@@ -25,6 +26,7 @@ tasks.withType<AbstractArchiveTask>().configureEach {
 }
 
 mavenPublishing {
+    publishToMavenCentral(SonatypeHost.CENTRAL_PORTAL)
     publishing {
         repositories {
             maven {
