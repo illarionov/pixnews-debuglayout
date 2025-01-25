@@ -5,6 +5,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+import org.jetbrains.compose.web.tasks.UnpackSkikoWasmRuntimeTask
+
 plugins {
     id("at.released.debuglayout.gradle.multiplatform.android")
     id("at.released.debuglayout.gradle.multiplatform.kotlin")
@@ -63,4 +65,9 @@ kotlin {
             implementation(libs.assertk)
         }
     }
+}
+
+tasks.withType<UnpackSkikoWasmRuntimeTask>().configureEach {
+    // Do not pack Skiko runtime into published JS klib. Workaround https://youtrack.jetbrains.com/issue/CMP-7479
+    enabled = false
 }
