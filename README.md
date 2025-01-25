@@ -6,10 +6,23 @@ It is intended to be used only with `@Preview` Composables, in screenshot tests 
 
 ## Installation
 
-Release and snapshot versions of the library are published to a temporary repository, since this library is currently
-used only in one pet project. File a bug report if you think it could be useful on Maven Central.
+The latest release is available on [Maven Central].
 
-Add the following to your project's settings.gradle:
+```kotlin
+repositories {
+    mavenCentral()
+}
+```
+
+Add the dependency:
+
+```kotlin
+dependencies {
+    implementation("at.released.debuglayout:core:0.2")
+}
+```
+
+Snapshot versions may be published to a self-hosted public repository:
 
 ```kotlin
 pluginManagement {
@@ -21,14 +34,6 @@ pluginManagement {
             }
         }
     }
-}
-```
-
-Add the dependency:
-
-```kotlin
-dependencies {
-    implementation("at.released.debuglayout:core:0.1")
 }
 ```
 
