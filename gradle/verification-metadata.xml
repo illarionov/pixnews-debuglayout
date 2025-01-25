@@ -116,6 +116,11 @@
             <pgp value="EE0CA873074092F806F59B65D364ABAA39A47320"/>
          </artifact>
       </component>
+      <component group="com.google.errorprone" name="error_prone_annotations" version="2.27.0">
+         <artifact name="error_prone_annotations-2.27.0.jar">
+            <pgp value="EE0CA873074092F806F59B65D364ABAA39A47320"/>
+         </artifact>
+      </component>
       <component group="com.google.flatbuffers" name="flatbuffers-java" version="1.12.0">
          <artifact name="flatbuffers-java-1.12.0.jar">
             <pgp value="BCC135FC7ED8214F823D73E97FE9900F412D622E"/>
